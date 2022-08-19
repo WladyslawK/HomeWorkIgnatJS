@@ -1,0 +1,45 @@
+.imgContainer{
+    background-color: lawngreen;
+    float: left;
+    background-color: green;
+
+
+}
+.imgContainer img{
+    margin: 10px 5px 0px 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+.message{
+    background-color: lawngreen;
+    height: 40px;
+    min-height: 12vh;
+}
+
+.messageContainer{
+    font-size: 10px;
+    margin: 5px 0px 0px 0px;
+    background-color: green;
+    float: left;
+    border-radius: 5px 5px 5px 0;
+}
+.time{
+    text-align: right;
+    color:white;
+    padding-right: 7px;
+}
+.messageContainer span{
+    display: block;
+
+}
+span.name{
+    color: purple;
+}
+.styleContainer{
+    float: left;
+    background-color: lawngreen;
+    border-radius: 0 0 20px 0;
+}
+
