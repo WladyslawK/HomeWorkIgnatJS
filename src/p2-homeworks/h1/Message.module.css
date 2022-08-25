@@ -1,45 +1,47 @@
-.imgContainer{
-    background-color: lawngreen;
-    float: left;
-    background-color: green;
-
+body {
+    background-image: url("https://wallpaper.dog/large/10872535.jpg");
 
 }
-.imgContainer img{
-    margin: 10px 5px 0px 5px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
 
-}
-.message{
-    background-color: lawngreen;
+.message {
+    display: flex;
+    align-items: flex-end; /*set the picture down*/
     height: 40px;
     min-height: 12vh;
 }
 
-.messageContainer{
-    font-size: 10px;
-    margin: 5px 0px 0px 0px;
-    background-color: green;
-    float: left;
+.message img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.angle {
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 0 0, rgba(0, 0, 0, 0) 15px, rgba(255, 255, 255, 0.3) 0)
+}
+
+.contentContainer {
+    background-color: rgba(152, 152, 152, 0.5);
     border-radius: 5px 5px 5px 0;
 }
-.time{
-    text-align: right;
-    color:white;
-    padding-right: 7px;
+
+.name {
+    color: darksalmon;
+    font-weight: bold;
 }
-.messageContainer span{
-    display: block;
+
+.text {
+    color: white;
+    word-wrap: break-word;
+}
+
+.time {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
 
 }
-span.name{
-    color: purple;
-}
-.styleContainer{
-    float: left;
-    background-color: lawngreen;
-    border-radius: 0 0 20px 0;
-}
+
 
