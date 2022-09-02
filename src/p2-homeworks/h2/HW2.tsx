@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Affairs} from './Affairs'
+import {AlternativeAffairs} from "./AlternativeAffairs";
 
 //types
 type PriorityType = "high" | "middle" | "low"
@@ -28,7 +29,7 @@ export const ALL_PRIORITY: FilterType = "all"
 
 // pure helper functions
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => {
-    switch (filter){
+    /*switch (filter){
         case HIGH_PRIORITY:
             return affairs.filter(a => a.priority === HIGH_PRIORITY)
         case MIDDLE_PRIORITY:
@@ -36,6 +37,11 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
         case LOW_PRIORITY:
             return affairs.filter(a => a.priority === LOW_PRIORITY)
         default: return affairs
+    }*/
+    if(filter===ALL_PRIORITY) {
+        return affairs
+    } else{
+        return affairs.filter(affair => affair.priority === filter)
     }
 
 }
@@ -61,8 +67,8 @@ function HW2() {
             />
 
             <hr/>
-            {/*other version */}
-            {/*<AlternativeAffairs/>*/}
+            {/*<div>other version</div>
+            <AlternativeAffairs data={filteredAffairs} setFilter={changeSetFilterCallback} deleteAffair={deleteAffairCallback}/>*/}
             <hr/>
         </div>
     )
