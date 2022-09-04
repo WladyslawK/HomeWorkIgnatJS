@@ -67,7 +67,7 @@ function HW2() {
             />
 
             <hr/>
-            {/*<div>other version</div>
+           {/* <div>other version</div>
             <AlternativeAffairs data={filteredAffairs} setFilter={changeSetFilterCallback} deleteAffair={deleteAffairCallback}/>*/}
             <hr/>
         </div>

@@ -15,3 +15,19 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()
+
+/*type UserType = {
+    id: number
+    name: string
+    age: number }
+
+type UserPropsType = UserType & {
+    deleteUser: (id: number) => void }*/
+
+
+
+
+
+
+
+
