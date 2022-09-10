@@ -17,22 +17,25 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<string>('') // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        setName(e.currentTarget.value) // need to fix
-        setError("")
-    }
-    const addUser = () => {
-        if(name.trim()!==""){
-            alert(`Hello ${name} !`) // need to fix
-            addUserCallback(name)
-            setName("")
+        const newName = e.currentTarget.value.trim()
+        if(newName){
+            setName(e.currentTarget.value) // need to fix
+            error && setError("")
         }else{
+            setName("")
             setError("Name can not be space")
         }
 
     }
+    const addUser = () => {
+            alert(`Hello ${name} !`) // need to fix
+            addUserCallback(name)
+            setName("")
+    }
 
     const onKeyDownAddUser = (e: KeyboardEvent<HTMLInputElement>) => {
-        if(e.key==="Enter") addUser()
+        if(e.key==="Enter" && name) addUser()
+        else setError("Name can not be space")
     }
 
     const totalUsers = users.length// need to fix

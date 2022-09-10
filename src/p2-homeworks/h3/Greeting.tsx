@@ -14,12 +14,13 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, totalUsers, onKeyDownAddUser} // destruction of props
 ) => {
-    const inputClass = error ? s.error : "" // need to fix with (?:)
+    const inputClass = error ? s.error + " " + s.input : s.input // need to fix with (?:)
 
     return (
-        <div>
-            <input value={name} onChange={setNameCallback} onKeyDown={onKeyDownAddUser} className={inputClass}/>
-            <button onClick={addUser}>add</button>
+        <div className={s.container}>
+            <h3>Homework 3</h3>
+            <input value={name} onChange={setNameCallback} onKeyDown={onKeyDownAddUser} className={inputClass} onBlur={setNameCallback}/>
+            <button disabled={error? true : false} onClick={addUser}>add</button>
             <span>{totalUsers}</span>
             <div className={s.errorMessage}>{error}</div>
         </div>
