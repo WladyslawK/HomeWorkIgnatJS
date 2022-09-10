@@ -28,9 +28,14 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
     }
     const addUser = () => {
+        if(name){
             alert(`Hello ${name} !`) // need to fix
             addUserCallback(name)
             setName("")
+        }else{
+            setError("Name can not be space")
+        }
+
     }
 
     const onKeyDownAddUser = (e: KeyboardEvent<HTMLInputElement>) => {

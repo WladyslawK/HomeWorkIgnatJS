@@ -1,7 +1,7 @@
 import React, {ButtonHTMLAttributes, DetailedHTMLProps} from 'react'
 import s from './SuperButton.module.css'
 
-// тип пропсов обычной кнопки, children в котором храниться название кнопки там уже описан
+// props type of simple button, children that has got the name of the button is already inside
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
@@ -11,7 +11,7 @@ type SuperButtonPropsType = DefaultButtonPropsType & {
 const SuperButton: React.FC<SuperButtonPropsType> = (
     {
         red, className,
-        ...restProps// все остальные пропсы попадут в объект restProps, там же будет children
+        ...restProps// all other props will be in restProps, children will be there as well
     }
 ) => {
     const finalClassName = `${red ? s.red : s.default} ${className}`
@@ -19,7 +19,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     return (
         <button
             className={finalClassName}
-            {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
+            {...restProps} // give the button all other props if there are inside (children included)
         />
     )
 }
