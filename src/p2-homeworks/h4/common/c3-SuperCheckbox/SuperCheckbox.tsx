@@ -4,14 +4,14 @@ import s from './SuperCheckbox.module.css'
 // type of props os simple input
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-type SuperCheckboxPropsType = DefaultInputPropsType & {
+type SuperCheckboxPropsType = Omit<DefaultInputPropsType, "type"> & {
     onChangeChecked?: (checked: boolean) => void
     spanClassName?: string
 }
 
 const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     {
-        type, // take type so it will be not changeable
+        //type, // take type so it will be not changeable
         onChange, onChangeChecked,
         className, spanClassName,
         children, // text will come into this prop, no need in typification as it already done in React в React.FC
