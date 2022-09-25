@@ -1,0 +1,12 @@
+.container{
+    padding: 20px 0px;
+}
+.spanView{
+    border-bottom: 1px lawngreen solid;
+    margin: 20px 10px 40px 0px
+}
+.editImg{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}

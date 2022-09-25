@@ -6,7 +6,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    background-image: url("https://cdn.pixabay.com/photo/2020/04/11/11/45/background-5030087__340.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -16,3 +15,7 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+html{
+    background-image: url("https://wallpaperaccess.com/full/187171.jpg");
+}
+
