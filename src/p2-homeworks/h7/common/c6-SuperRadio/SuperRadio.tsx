@@ -17,18 +17,28 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // onChange, onChangeOption
+        if(onChange) onChange(e)
+        else if(onChangeOption) onChangeOption(e.currentTarget.value)
     }
+    console.log(value)
+    // map options with key comment inside jsx can break everything in GitHub pages
+    const mappedOptions: any[] = options ? options.map((option, index) => (
 
 
-    const mappedOptions: any[] = options ? options.map((o, i) => ( // map options with key
-        <label key={name + '-' + i}>
+        <label key={name + '-' + index}>
             <input
                 type={'radio'}
                 // name, checked, value, onChange
+                name={name}
+                value={option}
+                checked={option === value ? true : false}
+                onChange={onChangeCallback}
             />
-            {o}
+            {option}
         </label>
     )) : []
+
+
 
     return (
         <>

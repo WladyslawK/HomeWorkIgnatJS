@@ -2,6 +2,7 @@ import React from 'react'
 import {Navigate, Route, Routes } from 'react-router-dom';
 import PreJunior from "./pages/PreJunior";
 import Error404 from "./pages/Error404";
+import {Junior} from "./pages/Junior";
 
 
 export const PATH = {
@@ -23,6 +24,7 @@ function Pages() {
 
                 <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
 
+                <Route path={PATH.JUNIOR} element={<Junior/>}/>
                 {/*он отрисуется если пользователь захочет попасть на несуществующую страницу*/}
                 <Route path={'/*'} element={<Error404/>}/>
 
