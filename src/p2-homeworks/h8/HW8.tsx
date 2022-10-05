@@ -1,10 +1,14 @@
-import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
+import React, {useReducer} from 'react'
+import {checkAC, homeWorkReducer, sortDownAC, sortUpAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
-// export type UserType =
+export type UserType = {
+    _id: number
+    name: string
+    age: number
+}
 
-const initialPeople = [
+const initialPeople: UserType[] = [
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
@@ -13,34 +17,38 @@ const initialPeople = [
     {_id: 5, name: 'Ирина', age: 55},
 ]
 
-function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+const divContainer = {
+    display: "flex",
+    justifyContent: "start",
+    marginLeft: "8px"
+}
 
-    // need to fix any
-    const finalPeople = people.map((p: any) => (
-        <div key={p._id}>
-            some name, age
+function HW8() {
+    const [people, peopleDispatch] = useReducer(homeWorkReducer, initialPeople)
+
+    const sortUPHandler = () => peopleDispatch(sortUpAC())
+    const sortDownHandler = () => peopleDispatch(sortDownAC())
+    const checkAgeHandler = () => peopleDispatch(checkAC(18))
+
+
+    const finalPeople = people && people.map((person: UserType) => (
+        <div key={person._id} style={{color: "green", marginLeft: "10px"}}>
+            {person.name} {person.age}
         </div>
     ))
-
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
 
     return (
         <div>
             <hr/>
-            homeworks 8
+            <h3>homeworks 8</h3>
 
-            {/*should work (должно работать)*/}
             {finalPeople}
+            <div style={divContainer}>
+                <SuperButton onClick={sortUPHandler}>sort up</SuperButton>
+                <SuperButton onClick={sortDownHandler}>sort down</SuperButton>
+                <SuperButton onClick={checkAgeHandler}>check 18</SuperButton>
+            </div>
 
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativePeople/>*/}
-            <hr/>
         </div>
     )
 }
