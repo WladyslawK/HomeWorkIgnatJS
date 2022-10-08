@@ -19,7 +19,7 @@ test('sort name up', () => {
     const newState = homeWorkReducer(initialState, sortUpAC())
 
     expect(newState[0].age).toBe(66)
-    expect(newState[1].age).toBe(55)
+    expect(newState[1].age).toBe(44)
     expect(newState[5].name).toBe('Кот')
 
     console.log(newState)

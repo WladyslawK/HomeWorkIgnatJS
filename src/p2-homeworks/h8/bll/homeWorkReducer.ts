@@ -7,9 +7,9 @@ const CHECK_AGE = "CHECK-AGE"
 export const homeWorkReducer = (state: UserType[], action: ActionType): UserType[] => {
     switch (action.type) {
         case "SORT-UP":
-            return [...state.sort((a, b) => b.age - a.age)]
+            return [...state.sort((a, b) => a.name.localeCompare(b.name))]
         case "SORT-DOWN":
-            return [...state.sort((a, b) => a.age - b.age)]
+            return [...state.sort((a, b) => b.name.localeCompare(a.name))]
         case "CHECK-AGE":
             return state.filter(person => person.age > action.payload.age)
         default: return state
