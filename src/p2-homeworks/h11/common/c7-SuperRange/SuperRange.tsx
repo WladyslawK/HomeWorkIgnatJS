@@ -1,4 +1,5 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
+// @ts-ignore
 import s from './SuperRange.module.css'
 
 // тип пропсов обычного инпута
@@ -36,6 +37,8 @@ const SuperRange: React.FC<SuperRangePropsType> = (
 
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
+
+
         </>
     )
 }
